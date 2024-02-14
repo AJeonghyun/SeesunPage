@@ -77,10 +77,6 @@ function ScrollTop(props) {
 
 ScrollTop.propTypes = {
   children: PropTypes.element.isRequired,
-  /**
-   * Injected by the documentation to work in an iframe.
-   * You won't need it on your project.
-   */
   window: PropTypes.func,
 };
 
@@ -101,17 +97,19 @@ function Navigation(props) {
       <AppBar>
       <Toolbar
   style={{
-    backgroundColor: trigger ? 'green' : 'white', // 배경색을 스크롤 트리거에 따라 변경
-    color: trigger ? 'white' : 'black', // 텍스트 색상도 스크롤 트리거에 따라 변경
+    backgroundColor: trigger ? 'green' : 'white',
+    color: trigger ? 'white' : 'black', 
   }}
 >
           <Typography
-            style={{ fontWeight: 'bold', fontSize: '30px', paddingLeft: '1%' }}
+            style={{ fontWeight: 'bold', fontSize: '30px', paddingLeft: '1%'}}
             variant="h6"
             component="div"
             sx={{ flexGrow: 1, display: { xs: 'none', sm: 'block' } }}
           >
-            SEESUN
+            <Link to="/home" style={{ textDecoration: "none", color: 'inherit'}}>
+              SEESUN
+              </Link>
           </Typography>
           <Box sx={{ display: { xs: 'none', sm: 'block' }, pr: '3%' }}>
             {navItems.map((item) => (
